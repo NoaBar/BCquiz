@@ -6,6 +6,11 @@
     <string name="m_f_condom">Male/Female Condom</string>
     <string name="pills">Pills</string>
     <string name="non_hormonal_iud">Non-hormonal IUD</string>
+
+    <string name="iud_grade">0</string>
+    <string name="pills_grade">0</string>
+    <string name="condom_grade">0</string>
+
     <string name="question_1">Are you looking for a birth control that protects against STDs/STIs?</string>
     <string name="question_2">Are you looking for a non-hormonal birth control?</string>
     <string name="question_3">Do you or your family have a history of blood clots?</string>
@@ -30,8 +35,13 @@
     <string name="no_7">No</string>
     <string name="yes_8">Yes</string>
     <string name="no_8">No</string>
+
     <string name="finish_button">Finish</string>
-    <string name="iud_grade">0</string>
-    <string name="pills_grade">0</string>
-    <string name="condom_grade">0</string>
+    <string name="more_info">For more information about different methods of contraception click on the links below:</string>
+    <string name="who"><a href="http://www.who.int/mediacentre/factsheets/fs351/en/">World health organization</a></string>
+    <string name="your_life"><a href="https://www.your-life.com/en/contraception-methods/#methods-">Your life</a></string>
+
+    <string name="txtCredits">www.google.com</string>
+
+
 </resources>

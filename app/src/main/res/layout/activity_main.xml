@@ -31,13 +31,13 @@
                 android:layout_height="wrap_content"
                 android:text="@string/condom_grade"
                 android:gravity="center"
-                android:paddingTop="5dp"/>
+                android:paddingTop="10dp"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:paddingTop="10dp"
+                android:paddingTop="5dp"
                 android:text="@string/m_f_condom"
 
                 />
@@ -53,7 +53,7 @@
             android:padding="10dp">
 
             <ImageView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/pillsround" />
 
@@ -91,7 +91,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/iud_grade"
                 android:gravity="center"
-                android:paddingTop="5dp"/>
+                android:paddingTop="8dp"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -391,10 +391,25 @@
                 android:id="@+id/more_info"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingStart="10dp"
-                android:paddingEnd="10dp"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
                 android:paddingTop="10dp"
-                android:text="Click here for more information about different methods of birth control!"
+                android:paddingBottom="5dp"
+                android:text="@string/more_info"
+                android:gravity="center"
+                android:autoLink="web"
+                android:textColor="#000"
+                />
+
+
+            <TextView
+                android:id="@+id/link"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:paddingBottom="5dp"
+                android:text="@string/your_life"
                 android:gravity="center"
                 android:autoLink="web"
                 android:textColor="#000"
@@ -407,7 +422,7 @@
             android:paddingStart="20dp"
             android:paddingEnd="20dp"
             android:paddingBottom="20dp"
-            android:text="www.who.int/mediacentre/factsheets/fs351/en/"
+            android:text="@string/who"
             android:gravity="center"
             android:autoLink="web"
             android:textColor="#000"
