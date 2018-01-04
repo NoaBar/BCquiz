@@ -29,9 +29,16 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:text="@string/condom_grade"
+                android:gravity="center"
+                android:paddingTop="5dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:gravity="center"
                 android:paddingTop="10dp"
-                android:text="Male/Female Condom"
+                android:text="@string/m_f_condom"
 
                 />
 
@@ -53,8 +60,15 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:text="@string/pills_grade"
                 android:gravity="center"
-                android:text="Pills" />
+                android:paddingTop="0dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/pills" />
 
         </LinearLayout>
 
@@ -70,14 +84,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:src="@drawable/iudsmall"
-
                 />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:text="@string/iud_grade"
                 android:gravity="center"
-                android:text="Non-hormonal IUD" />
+                android:paddingTop="5dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/non_hormonal_iud" />
 
         </LinearLayout>
 
@@ -90,7 +110,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <TextView
@@ -99,8 +119,7 @@
                 android:layout_height="wrap_content"
                 android:paddingStart="20dp"
                 android:paddingEnd="20dp"
-                android:text="Are you looking for a birth control that protects
-against STDs/STIs?"
+                android:text="@string/question_1"
                 android:textColor="#000" />
 
             <RadioGroup
@@ -114,17 +133,17 @@ against STDs/STIs?"
                 >
 
                 <RadioButton
-                    android:id="@+id/quest_1_yes"
+                    android:id="@+id/answer_1_yes"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Yes"
+                    android:text="@string/yes_1"
                     android:textAppearance="?android:textAppearanceSmall" />
 
                 <RadioButton
-                    android:id="@+id/quest_1_no"
+                    android:id="@+id/answer_1_no"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="No"
+                    android:text="@string/no_1"
                     android:textAppearance="?android:textAppearanceSmall" />
             </RadioGroup>
 
@@ -135,7 +154,7 @@ against STDs/STIs?"
                 android:paddingStart="20dp"
                 android:paddingEnd="20dp"
                 android:paddingTop="10dp"
-                android:text="Are you looking for a non-hormonal birth control?"
+                android:text="@string/question_2"
                 android:textColor="#000" />
 
             <RadioGroup
@@ -147,17 +166,17 @@ against STDs/STIs?"
                 android:orientation="horizontal">
 
                 <RadioButton
-                    android:id="@+id/quest_2_yes"
+                    android:id="@+id/answer_2_yes"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Yes"
+                    android:text="@string/yes_2"
                     android:textAppearance="?android:textAppearanceSmall" />
 
                 <RadioButton
-                    android:id="@+id/quest_2_no"
+                    android:id="@+id/answer_2_no"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="No"
+                    android:text="@string/no_2"
                     android:textAppearance="?android:textAppearanceSmall" />
             </RadioGroup>
 
@@ -168,7 +187,7 @@ against STDs/STIs?"
                 android:paddingStart="20dp"
                 android:paddingEnd="20dp"
                 android:paddingTop="10dp"
-                android:text="Do you or your family have a history of blood clots?"
+                android:text="@string/question_3"
                 android:textColor="#000" />
 
             <RadioGroup
@@ -180,17 +199,17 @@ against STDs/STIs?"
                 android:orientation="horizontal">
 
                 <RadioButton
-                    android:id="@+id/quest_3_yes"
+                    android:id="@+id/answer_3_yes"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Yes"
+                    android:text="@string/yes_3"
                     android:textAppearance="?android:textAppearanceSmall" />
 
                 <RadioButton
-                    android:id="@+id/quest_3_no"
+                    android:id="@+id/answer_3_no"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="No"
+                    android:text="@string/no_3"
                     android:textAppearance="?android:textAppearanceSmall" />
             </RadioGroup>
 
@@ -201,7 +220,7 @@ against STDs/STIs?"
                 android:paddingStart="20dp"
                 android:paddingEnd="20dp"
                 android:paddingTop="10dp"
-                android:text="Do you experience pain or heavy flow while menstruating?"
+                android:text="@string/question_4"
                 android:textColor="#000" />
 
             <RadioGroup
@@ -213,17 +232,17 @@ against STDs/STIs?"
                 android:orientation="horizontal">
 
                 <RadioButton
-                    android:id="@+id/quest_4_yes"
+                    android:id="@+id/answer_4_yes"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Yes"
+                    android:text="@string/yes_4"
                     android:textAppearance="?android:textAppearanceSmall" />
 
                 <RadioButton
-                    android:id="@+id/quest_4_no"
+                    android:id="@+id/answer_4_no"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="No"
+                    android:text="@string/no_4"
                     android:textAppearance="?android:textAppearanceSmall" />
             </RadioGroup>
 
@@ -234,7 +253,7 @@ against STDs/STIs?"
                 android:paddingStart="20dp"
                 android:paddingEnd="20dp"
                 android:paddingTop="10dp"
-                android:text="Do you plan to conceive in the near future?"
+                android:text="@string/question_5"
                 android:textColor="#000" />
 
             <RadioGroup
@@ -246,17 +265,17 @@ against STDs/STIs?"
                 android:paddingEnd="20dp">
 
                 <RadioButton
-                    android:id="@+id/quest_5_yes"
+                    android:id="@+id/answer_5_yes"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Yes"
+                    android:text="@string/yes_5"
                     android:textAppearance="?android:textAppearanceSmall" />
 
                 <RadioButton
-                    android:id="@+id/quest_5_no"
+                    android:id="@+id/answer_5_no"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="No"
+                    android:text="@string/no_5"
                     android:textAppearance="?android:textAppearanceSmall" />
             </RadioGroup>
 
@@ -267,7 +286,7 @@ against STDs/STIs?"
                 android:paddingStart="20dp"
                 android:paddingEnd="20dp"
                 android:paddingTop="10dp"
-                android:text="Are you over the age of 35 and do you smoke regularly?"
+                android:text="@string/question_6"
                 android:textColor="#000" />
 
             <RadioGroup
@@ -279,17 +298,17 @@ against STDs/STIs?"
                 android:orientation="horizontal">
 
                 <RadioButton
-                    android:id="@+id/quest_6_yes"
+                    android:id="@+id/answer_6_yes"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Yes"
+                    android:text="@string/yes_6"
                     android:textAppearance="?android:textAppearanceSmall" />
 
                 <RadioButton
-                    android:id="@+id/quest_6_no"
+                    android:id="@+id/answer_6_no"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="No"
+                    android:text="@string/no_6"
                     android:textAppearance="?android:textAppearanceSmall" />
             </RadioGroup>
 
@@ -300,7 +319,7 @@ against STDs/STIs?"
                 android:paddingStart="20dp"
                 android:paddingEnd="20dp"
                 android:paddingTop="10dp"
-                android:text="Do you have a fixed daily routine?"
+                android:text="@string/question_7"
                 android:textColor="#000" />
 
             <RadioGroup
@@ -312,17 +331,17 @@ against STDs/STIs?"
                 android:orientation="horizontal">
 
                 <RadioButton
-                    android:id="@+id/quest_7_yes"
+                    android:id="@+id/answer_7_yes"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Yes"
+                    android:text="@string/yes_7"
                     android:textAppearance="?android:textAppearanceSmall" />
 
                 <RadioButton
-                    android:id="@+id/quest_7_no"
+                    android:id="@+id/answer_7_no"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="No"
+                    android:text="@string/no_7"
                     android:textAppearance="?android:textAppearanceSmall" />
             </RadioGroup>
 
@@ -333,7 +352,7 @@ against STDs/STIs?"
                 android:paddingStart="20dp"
                 android:paddingEnd="20dp"
                 android:paddingTop="10dp"
-                android:text="Do you tend to be forgetful?"
+                android:text="@string/question_8"
                 android:textColor="#000" />
 
             <RadioGroup
@@ -345,19 +364,28 @@ against STDs/STIs?"
                 android:orientation="horizontal">
 
                 <RadioButton
-                    android:id="@+id/quest_8_yes"
+                    android:id="@+id/answer_8_yes"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Yes"
+                    android:text="@string/yes_8"
                     android:textAppearance="?android:textAppearanceSmall" />
 
                 <RadioButton
-                    android:id="@+id/quest_8_no"
+                    android:id="@+id/answer_8_no"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="No"
+                    android:text="@string/no_8"
                     android:textAppearance="?android:textAppearanceSmall" />
             </RadioGroup>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/finish_button"
+                android:textAppearance="?android:textAppearanceLarge"
+                android:textColor="#4689C8"
+                android:layout_gravity="center"
+                android:textStyle="bold"/>
 
             <TextView
                 android:id="@+id/more_info"
@@ -376,7 +404,9 @@ against STDs/STIs?"
             android:id="@+id/link"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingLeft="10dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="20dp"
             android:text="www.who.int/mediacentre/factsheets/fs351/en/"
             android:gravity="center"
             android:autoLink="web"
