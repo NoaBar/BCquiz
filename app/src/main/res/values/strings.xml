@@ -19,22 +19,9 @@
     <string name="question_6">Are you over the age of 35 and smoke regularly?</string>
     <string name="question_7">Do you have a fixed daily routine?</string>
     <string name="question_8">Do you tend to be forgetful?</string>
-    <string name="yes_1">Yes</string>
-    <string name="no_1">No</string>
-    <string name="no_2">No</string>
-    <string name="yes_2">Yes</string>
-    <string name="yes_3">Yes</string>
-    <string name="no_3">No</string>
-    <string name="yes_4">Yes</string>
-    <string name="no_4">No</string>
-    <string name="yes_5">Yes</string>
-    <string name="no_5">No</string>
-    <string name="yes_6">Yes</string>
-    <string name="no_6">No</string>
-    <string name="yes_7">Yes</string>
-    <string name="no_7">No</string>
-    <string name="yes_8">Yes</string>
-    <string name="no_8">No</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
 
     <string name="finish_button">Finish</string>
     <string name="more_info">For more information about different methods of contraception click on the links below:</string>

@@ -136,14 +136,14 @@
                     android:id="@+id/answer_1_yes"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/yes_1"
+                    android:text="@string/yes"
                     android:textAppearance="?android:textAppearanceSmall" />
 
                 <RadioButton
                     android:id="@+id/answer_1_no"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/no_1"
+                    android:text="@string/no"
                     android:textAppearance="?android:textAppearanceSmall" />
             </RadioGroup>
 
@@ -169,14 +169,14 @@
                     android:id="@+id/answer_2_yes"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/yes_2"
+                    android:text="@string/yes"
                     android:textAppearance="?android:textAppearanceSmall" />
 
                 <RadioButton
                     android:id="@+id/answer_2_no"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/no_2"
+                    android:text="@string/no"
                     android:textAppearance="?android:textAppearanceSmall" />
             </RadioGroup>
 
@@ -202,14 +202,14 @@
                     android:id="@+id/answer_3_yes"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/yes_3"
+                    android:text="@string/yes"
                     android:textAppearance="?android:textAppearanceSmall" />
 
                 <RadioButton
                     android:id="@+id/answer_3_no"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/no_3"
+                    android:text="@string/no"
                     android:textAppearance="?android:textAppearanceSmall" />
             </RadioGroup>
 
@@ -235,14 +235,14 @@
                     android:id="@+id/answer_4_yes"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/yes_4"
+                    android:text="@string/yes"
                     android:textAppearance="?android:textAppearanceSmall" />
 
                 <RadioButton
                     android:id="@+id/answer_4_no"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/no_4"
+                    android:text="@string/no"
                     android:textAppearance="?android:textAppearanceSmall" />
             </RadioGroup>
 
@@ -268,14 +268,14 @@
                     android:id="@+id/answer_5_yes"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/yes_5"
+                    android:text="@string/yes"
                     android:textAppearance="?android:textAppearanceSmall" />
 
                 <RadioButton
                     android:id="@+id/answer_5_no"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/no_5"
+                    android:text="@string/no"
                     android:textAppearance="?android:textAppearanceSmall" />
             </RadioGroup>
 
@@ -301,14 +301,14 @@
                     android:id="@+id/answer_6_yes"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/yes_6"
+                    android:text="@string/yes"
                     android:textAppearance="?android:textAppearanceSmall" />
 
                 <RadioButton
                     android:id="@+id/answer_6_no"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/no_6"
+                    android:text="@string/no"
                     android:textAppearance="?android:textAppearanceSmall" />
             </RadioGroup>
 
@@ -334,14 +334,14 @@
                     android:id="@+id/answer_7_yes"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/yes_7"
+                    android:text="@string/yes"
                     android:textAppearance="?android:textAppearanceSmall" />
 
                 <RadioButton
                     android:id="@+id/answer_7_no"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/no_7"
+                    android:text="@string/no"
                     android:textAppearance="?android:textAppearanceSmall" />
             </RadioGroup>
 
@@ -367,14 +367,14 @@
                     android:id="@+id/answer_8_yes"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/yes_8"
+                    android:text="@string/yes"
                     android:textAppearance="?android:textAppearanceSmall" />
 
                 <RadioButton
                     android:id="@+id/answer_8_no"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/no_8"
+                    android:text="@string/no"
                     android:textAppearance="?android:textAppearanceSmall" />
             </RadioGroup>
 
