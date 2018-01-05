@@ -403,7 +403,7 @@
 
 
             <TextView
-                android:id="@+id/link"
+                android:id="@+id/link_your_life"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingStart="20dp"
@@ -411,21 +411,19 @@
                 android:paddingBottom="5dp"
                 android:text="@string/your_life"
                 android:gravity="center"
-                android:autoLink="web"
                 android:textColor="#000"
                 />
 
             <TextView
-            android:id="@+id/link"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingStart="20dp"
-            android:paddingEnd="20dp"
-            android:paddingBottom="20dp"
-            android:text="@string/who"
-            android:gravity="center"
-            android:autoLink="web"
-            android:textColor="#000"
+                android:id="@+id/link_who"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:paddingBottom="20dp"
+                android:text="@string/who"
+                android:gravity="center"
+                android:textColor="#000"
             />
 
         </LinearLayout>

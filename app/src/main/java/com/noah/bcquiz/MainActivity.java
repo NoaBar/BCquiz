@@ -3,6 +3,10 @@ package com.noah.bcquiz;
 import android.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Html;
+import android.text.method.LinkMovementMethod;
+import android.text.util.Linkify;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -15,5 +19,15 @@ public class MainActivity extends AppCompatActivity {
                 .setMessage(R.string.disclaimer_message)
                 .setNeutralButton(R.string.disclaimer_button, null)
                 .show();
+
+        TextView who = (TextView) findViewById(R.id.link_who);
+        who.setMovementMethod(LinkMovementMethod.getInstance());
+
+        TextView yourLife = (TextView) findViewById(R.id.link_your_life);
+        yourLife.setMovementMethod(LinkMovementMethod.getInstance());
     }
+
+
+
+
 }
