@@ -6,7 +6,13 @@ import android.os.Bundle;
 import android.text.Html;
 import android.text.method.LinkMovementMethod;
 import android.text.util.Linkify;
+import android.view.View;
+import android.widget.CheckBox;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
+
+import java.security.acl.Group;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,6 +34,206 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    int condomGrade = 0;
+    int pillsGrade = 0;
+    int iudGrade = 0;
 
+
+    /**
+     * Displays the given grade for condoms.
+     */
+    public void displayCondomGrade(int condomGrade) {
+        TextView gradeView = (TextView) findViewById(R.id.condomGrade);
+        gradeView.setText(String.valueOf(condomGrade));
+    }
+
+    /**
+     * Displays the given grade for pills.
+     */
+    public void displayPillsGrade(int pillsGrade) {
+        TextView gradeView = (TextView) findViewById(R.id.pillsGrade);
+        gradeView.setText(String.valueOf(pillsGrade));
+    }
+
+
+    /**
+     * Displays the given grade for IUD.
+     */
+    public void displayIudGrade(int iudGrade) {
+        TextView gradeView = (TextView) findViewById(R.id.iudGrade);
+        gradeView.setText(String.valueOf(iudGrade));
+    }
+
+
+    /**
+     * This method is called when all the radioButtons are clicked (to see how the grade changes online)
+     * and the finish button is clicked.
+     */
+    public void answers_check(View view) {
+        RadioButton answer_1_yes = (RadioButton) findViewById(R.id.answer_1_yes);
+        RadioButton answer_1_no = (RadioButton) findViewById(R.id.answer_1_no);
+        RadioButton answer_2_yes = (RadioButton) findViewById(R.id.answer_2_yes);
+        RadioButton answer_2_no = (RadioButton) findViewById(R.id.answer_2_no);
+        RadioButton answer_3_yes = (RadioButton) findViewById(R.id.answer_3_yes);
+        RadioButton answer_3_no = (RadioButton) findViewById(R.id.answer_3_no);
+        RadioButton answer_4_yes = (RadioButton) findViewById(R.id.answer_4_yes);
+        RadioButton answer_4_no = (RadioButton) findViewById(R.id.answer_4_no);
+        RadioButton answer_5_yes = (RadioButton) findViewById(R.id.answer_5_yes);
+        RadioButton answer_5_no = (RadioButton) findViewById(R.id.answer_5_no);
+        RadioButton answer_6_yes = (RadioButton) findViewById(R.id.answer_6_yes);
+        RadioButton answer_6_no = (RadioButton) findViewById(R.id.answer_6_no);
+        RadioButton answer_7_yes = (RadioButton) findViewById(R.id.answer_7_yes);
+        RadioButton answer_7_no = (RadioButton) findViewById(R.id.answer_7_no);
+        RadioButton answer_8_yes = (RadioButton) findViewById(R.id.answer_8_yes);
+        RadioButton answer_8_no = (RadioButton) findViewById(R.id.answer_8_no);
+
+        condomGrade = 0;
+        pillsGrade = 0;
+        iudGrade = 0;
+
+        if (answer_1_yes.isChecked()) {
+            condomGrade += 10;
+            displayCondomGrade(condomGrade);
+            pillsGrade += 0;
+            displayPillsGrade(pillsGrade);
+            iudGrade += 0;
+            displayIudGrade(iudGrade);
+        } else if (answer_1_no.isChecked()) {
+            condomGrade++;
+            displayCondomGrade(condomGrade);
+            pillsGrade++;
+            displayPillsGrade(pillsGrade);
+            iudGrade++;
+            displayIudGrade(iudGrade);
+        }
+
+        if (answer_2_yes.isChecked()) {
+            condomGrade++;
+            displayCondomGrade(condomGrade);
+            pillsGrade++;
+            displayPillsGrade(pillsGrade);
+            iudGrade += 0;
+            displayIudGrade(iudGrade);
+        } else if (answer_2_no.isChecked()) {
+            condomGrade++;
+            displayCondomGrade(condomGrade);
+            pillsGrade++;
+            displayPillsGrade(pillsGrade);
+            iudGrade++;
+            displayIudGrade(iudGrade);
+        }
+
+        if (answer_3_yes.isChecked()) {
+            condomGrade++;
+            displayCondomGrade(condomGrade);
+            pillsGrade += 0;
+            displayPillsGrade(pillsGrade);
+            iudGrade += 0;
+            displayIudGrade(iudGrade);
+        } else if (answer_3_no.isChecked()) {
+            condomGrade++;
+            displayCondomGrade(condomGrade);
+            pillsGrade++;
+            displayPillsGrade(pillsGrade);
+            iudGrade++;
+            displayIudGrade(iudGrade);
+        }
+
+        if (answer_4_yes.isChecked()) {
+            condomGrade++;
+            displayCondomGrade(condomGrade);
+            pillsGrade += 0;
+            displayPillsGrade(pillsGrade);
+            iudGrade += 0;
+            displayIudGrade(iudGrade);
+        } else if (answer_4_no.isChecked()) {
+            condomGrade++;
+            displayCondomGrade(condomGrade);
+            pillsGrade++;
+            displayPillsGrade(pillsGrade);
+            iudGrade++;
+            displayIudGrade(iudGrade);
+        }
+
+        if (answer_5_yes.isChecked()) {
+            condomGrade++;
+            displayCondomGrade(condomGrade);
+            pillsGrade += 0;
+            displayPillsGrade(pillsGrade);
+            iudGrade += 0;
+            displayIudGrade(iudGrade);
+        } else if (answer_5_no.isChecked()) {
+            condomGrade++;
+            displayCondomGrade(condomGrade);
+            pillsGrade++;
+            displayPillsGrade(pillsGrade);
+            iudGrade++;
+            displayIudGrade(iudGrade);
+        }
+
+        if (answer_6_yes.isChecked()) {
+            condomGrade++;
+            displayCondomGrade(condomGrade);
+            pillsGrade += 0;
+            displayPillsGrade(pillsGrade);
+            iudGrade += 0;
+            displayIudGrade(iudGrade);
+        } else if (answer_6_no.isChecked()) {
+            condomGrade++;
+            displayCondomGrade(condomGrade);
+            pillsGrade++;
+            displayPillsGrade(pillsGrade);
+            iudGrade++;
+            displayIudGrade(iudGrade);
+        }
+
+        if (answer_7_yes.isChecked()) {
+            condomGrade++;
+            displayCondomGrade(condomGrade);
+            pillsGrade += 0;
+            displayPillsGrade(pillsGrade);
+            iudGrade += 0;
+            displayIudGrade(iudGrade);
+        } else if (answer_7_no.isChecked()) {
+            condomGrade++;
+            displayCondomGrade(condomGrade);
+            pillsGrade++;
+            displayPillsGrade(pillsGrade);
+            iudGrade++;
+            displayIudGrade(iudGrade);
+        }
+
+        if (answer_8_yes.isChecked()) {
+            condomGrade++;
+            displayCondomGrade(condomGrade);
+            pillsGrade += 0;
+            displayPillsGrade(pillsGrade);
+            iudGrade += 0;
+            displayIudGrade(iudGrade);
+        } else if (answer_8_no.isChecked()) {
+            condomGrade++;
+            displayCondomGrade(condomGrade);
+            pillsGrade++;
+            displayPillsGrade(pillsGrade);
+            iudGrade++;
+            displayIudGrade(iudGrade);
+        }
+
+
+    }
+
+
+    public void resetGrade(View view) {
+        condomGrade = 0;
+        displayCondomGrade(condomGrade);
+        pillsGrade = 0;
+        displayPillsGrade(pillsGrade);
+        iudGrade = 0;
+        displayIudGrade(iudGrade);
+
+        RadioButton answer_1_yes = (RadioButton) findViewById(R.id.answer_1_yes);
+        answer_1_yes.setChecked(false);
+
+    }
 
 }

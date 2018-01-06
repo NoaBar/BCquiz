@@ -15,7 +15,7 @@
     <string name="question_2">Are you looking for a non-hormonal birth control?</string>
     <string name="question_3">Do you or your family have a history of blood clots?</string>
     <string name="question_4">Do you experience pain or heavy flow while menstruating?</string>
-    <string name="question_5">Do you plan to conceive in the near future?</string>
+    <string name="question_5">Do you plan to conceive in the very near future?</string>
     <string name="question_6">Are you over the age of 35 and smoke regularly?</string>
     <string name="question_7">Do you have a fixed daily routine?</string>
     <string name="question_8">Do you tend to be forgetful?</string>
@@ -27,7 +27,7 @@
     <string name="more_info">For more information about different methods of contraception click on the links below:</string>
     <string name="who"><a href="http://www.who.int/mediacentre/factsheets/fs351/en/">World health organization</a></string>
     <string name="your_life"><a href="https://www.your-life.com/en/contraception-methods/#methods-">Your life</a></string>
-
+    <string name="reset_button">Reset</string>
 
 
 </resources>
