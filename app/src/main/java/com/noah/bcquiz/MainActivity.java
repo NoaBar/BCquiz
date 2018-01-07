@@ -220,18 +220,15 @@ public class MainActivity extends AppCompatActivity {
             displayCondomGrade(condomGrade);
             pillsGrade++;
             displayPillsGrade(pillsGrade);
-            iudGrade++;
+            iudGrade+=10;
             displayIudGrade(iudGrade);
         }
-
-
     }
+
 
     /**
      * This method checks if all the questions are answered.
      */
-
-
     public boolean areAllQuestionsAnswered() {
 
         RadioGroup answer_1 = (RadioGroup) findViewById(R.id.answer_1);
@@ -258,20 +255,41 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * This method finds which BC method seems to be the best for the user.
+     */
+    public String findBestMethod() {
+        int[] gradesArray = {condomGrade, pillsGrade, iudGrade};
+        String[] methodNames = {getString(R.string.m_f_condom), getString(R.string.pills),
+                getString(R.string.non_hormonal_iud)};
+        int size = gradesArray.length;
+        int bestGrade = gradesArray[0];
+        String bestMethod = methodNames[0];
+
+        for (int i = 1; i < size; i++) {
+            if (gradesArray[i] >= bestGrade) {
+                bestGrade = gradesArray[i];
+                bestMethod = methodNames[i];
+            }
+        }
+        return bestMethod;
+    }
 
 
     /**
-     * This method is called when reset button is clicked.
+     * This method is called when finish button is clicked.
      */
 
     public void finish(View view) {
-         
-
         if (areAllQuestionsAnswered()) {
-            if ()
-            Toast.makeText(this, "Seems like + + is a good method for you! for more information, please click:", Toast.LENGTH_LONG).show();
+            AlertDialog alertDialog = new AlertDialog.Builder(this)
+                    .setTitle("Final Answer:")
+                    .setMessage("Seems like " + findBestMethod() + " might be a good contraception method for you! " +
+                            "\n\nFor more information, please click the links below!")
+                    .setNeutralButton("OK", null)
+                    .show();
         } else {
-            Toast toast = Toast.makeText(this, "For final answer please answer all the questions.", Toast.LENGTH_LONG);
+            Toast toast = Toast.makeText(this, R.string.incomplete_toast, Toast.LENGTH_LONG);
             LinearLayout layout = (LinearLayout) toast.getView();
             if (layout.getChildCount() > 0) {
                 TextView tv = (TextView) layout.getChildAt(0);
@@ -283,6 +301,9 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * This method is called when reset button is clicked.
+     */
 
     public void resetGrade(View view) {
         condomGrade = 0;
