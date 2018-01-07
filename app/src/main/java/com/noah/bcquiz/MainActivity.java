@@ -6,11 +6,15 @@ import android.os.Bundle;
 import android.text.Html;
 import android.text.method.LinkMovementMethod;
 import android.text.util.Linkify;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.security.acl.Group;
 
@@ -222,9 +226,63 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-      /**
-        * This method is called when reset button is clicked.
-       */
+
+    /**
+     * This method checks if all the questions are answered.
+     */
+
+
+    public boolean areAllQuestionsAnswered() {
+
+        RadioGroup answer_1 = (RadioGroup) findViewById(R.id.answer_1);
+        RadioGroup answer_2 = (RadioGroup) findViewById(R.id.answer_2);
+        RadioGroup answer_3 = (RadioGroup) findViewById(R.id.answer_3);
+        RadioGroup answer_4 = (RadioGroup) findViewById(R.id.answer_4);
+        RadioGroup answer_5 = (RadioGroup) findViewById(R.id.answer_5);
+        RadioGroup answer_6 = (RadioGroup) findViewById(R.id.answer_6);
+        RadioGroup answer_7 = (RadioGroup) findViewById(R.id.answer_7);
+        RadioGroup answer_8 = (RadioGroup) findViewById(R.id.answer_8);
+
+        if (answer_1.getCheckedRadioButtonId() == -1 ||
+                answer_2.getCheckedRadioButtonId() == -1 ||
+                answer_3.getCheckedRadioButtonId() == -1 ||
+                answer_4.getCheckedRadioButtonId() == -1 ||
+                answer_5.getCheckedRadioButtonId() == -1 ||
+                answer_6.getCheckedRadioButtonId() == -1 ||
+                answer_7.getCheckedRadioButtonId() == -1 ||
+                answer_8.getCheckedRadioButtonId() == -1) {
+            return false;
+
+        } else {
+            return true;
+        }
+    }
+
+
+
+    /**
+     * This method is called when reset button is clicked.
+     */
+
+    public void finish(View view) {
+         
+
+        if (areAllQuestionsAnswered()) {
+            if ()
+            Toast.makeText(this, "Seems like + + is a good method for you! for more information, please click:", Toast.LENGTH_LONG).show();
+        } else {
+            Toast toast = Toast.makeText(this, "For final answer please answer all the questions.", Toast.LENGTH_LONG);
+            LinearLayout layout = (LinearLayout) toast.getView();
+            if (layout.getChildCount() > 0) {
+                TextView tv = (TextView) layout.getChildAt(0);
+                tv.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL);
+            }
+            toast.setGravity(Gravity.CENTER, 0, 0);
+            toast.show();
+        }
+
+    }
+
 
     public void resetGrade(View view) {
         condomGrade = 0;
@@ -243,6 +301,7 @@ public class MainActivity extends AppCompatActivity {
         RadioGroup answer_7 = (RadioGroup) findViewById(R.id.answer_7);
         RadioGroup answer_8 = (RadioGroup) findViewById(R.id.answer_8);
 
+
         answer_1.clearCheck();
         answer_2.clearCheck();
         answer_3.clearCheck();
@@ -252,7 +311,8 @@ public class MainActivity extends AppCompatActivity {
         answer_7.clearCheck();
         answer_8.clearCheck();
 
-
+        ScrollView scrollView = (ScrollView) findViewById(R.id.scrollView);
+        scrollView.smoothScrollTo(0, 0);
 
 
     }

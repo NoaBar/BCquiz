@@ -108,7 +108,8 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -401,7 +402,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:onClick="answers_check"
+                android:onClick="finish"
                 android:text="@string/finish_button"
                 android:textAppearance="?android:textAppearanceLarge"
                 android:textColor="#4689C8"
