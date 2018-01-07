@@ -70,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
      * and the finish button is clicked.
      */
     public void answers_check(View view) {
+
         RadioButton answer_1_yes = (RadioButton) findViewById(R.id.answer_1_yes);
         RadioButton answer_1_no = (RadioButton) findViewById(R.id.answer_1_no);
         RadioButton answer_2_yes = (RadioButton) findViewById(R.id.answer_2_yes);
@@ -221,7 +222,9 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-
+      /**
+        * This method is called when reset button is clicked.
+       */
 
     public void resetGrade(View view) {
         condomGrade = 0;
@@ -231,8 +234,26 @@ public class MainActivity extends AppCompatActivity {
         iudGrade = 0;
         displayIudGrade(iudGrade);
 
-        RadioButton answer_1_yes = (RadioButton) findViewById(R.id.answer_1_yes);
-        answer_1_yes.setChecked(false);
+        RadioGroup answer_1 = (RadioGroup) findViewById(R.id.answer_1);
+        RadioGroup answer_2 = (RadioGroup) findViewById(R.id.answer_2);
+        RadioGroup answer_3 = (RadioGroup) findViewById(R.id.answer_3);
+        RadioGroup answer_4 = (RadioGroup) findViewById(R.id.answer_4);
+        RadioGroup answer_5 = (RadioGroup) findViewById(R.id.answer_5);
+        RadioGroup answer_6 = (RadioGroup) findViewById(R.id.answer_6);
+        RadioGroup answer_7 = (RadioGroup) findViewById(R.id.answer_7);
+        RadioGroup answer_8 = (RadioGroup) findViewById(R.id.answer_8);
+
+        answer_1.clearCheck();
+        answer_2.clearCheck();
+        answer_3.clearCheck();
+        answer_4.clearCheck();
+        answer_5.clearCheck();
+        answer_6.clearCheck();
+        answer_7.clearCheck();
+        answer_8.clearCheck();
+
+
+
 
     }
 
