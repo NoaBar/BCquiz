@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#B6E2D3</color>
-    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorPrimaryDark">#74BDCB</color>
     <color name="colorAccent">#FFA384</color>
 
     <color name="black">#000000</color>
@@ -16,6 +16,7 @@
     <color name="lightYellow">#EFE7BC</color>
     <color name="salmon">#FFA384</color>
     <color name="aqua">#74BDCB</color>
+    <color name="darkaqua">#06b1c1</color>
     <color name="babyBlue">#E7F2F8</color>
     <color name="peach">#F4BD9C</color>
 

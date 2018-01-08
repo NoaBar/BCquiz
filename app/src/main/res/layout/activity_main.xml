@@ -457,7 +457,7 @@
                 android:paddingEnd="20dp"
                 android:paddingStart="20dp"
                 android:text="@string/your_life"
-                android:textColor="@color/darkBrown" />
+                android:textColorLink="@color/darkaqua" />
 
             <TextView
                 android:id="@+id/link_who"
@@ -468,7 +468,7 @@
                 android:paddingEnd="20dp"
                 android:paddingStart="20dp"
                 android:text="@string/who"
-                android:textColor="@color/darkBrown" />
+                android:textColorLink="@color/darkaqua" />
 
         </LinearLayout>
     </ScrollView>
