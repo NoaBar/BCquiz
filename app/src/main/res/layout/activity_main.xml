@@ -2,14 +2,15 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
+    android:background="@color/cream"
     tools:context="com.noah.bcquiz.MainActivity">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="horizontal">
 
 
@@ -21,24 +22,27 @@
             android:padding="10dp">
 
             <ImageView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingTop="5dp"
-                android:src="@drawable/condoms" />
+                android:src="@drawable/condoms"
+                android:adjustViewBounds="true"
+                android:padding="10dp"
+                android:background="@color/mint"
+                />
 
             <TextView
                 android:id="@+id/condomGrade"
+                style="@style/titles"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:paddingTop="10dp"
                 android:text="@string/condom_grade" />
 
             <TextView
+                style="@style/titles"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:paddingTop="5dp"
                 android:text="@string/m_f_condom"
 
                 />
@@ -56,17 +60,23 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/pillsround" />
+                android:src="@drawable/pillsround"
+                android:adjustViewBounds="true"
+                android:padding="10dp"
+                android:background="@color/mint"/>
 
             <TextView
                 android:id="@+id/pillsGrade"
+                style="@style/titles"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:paddingTop="0dp"
-                android:text="@string/pills_grade" />
+                android:text="@string/pills_grade"
+
+                />
 
             <TextView
+                style="@style/titles"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -83,19 +93,23 @@
             android:padding="10dp">
 
             <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@drawable/iudsmall" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/iudsmall"
+                android:adjustViewBounds="true"
+                android:padding="10dp"
+                android:background="@color/mint"/>
 
             <TextView
                 android:id="@+id/iudGrade"
+                style="@style/titles"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:paddingTop="8dp"
                 android:text="@string/iud_grade" />
 
             <TextView
+                style="@style/titles"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -123,7 +137,8 @@
                 android:paddingEnd="20dp"
                 android:paddingStart="20dp"
                 android:text="@string/question_1"
-                android:textColor="#000" />
+                style="@style/questions"
+                />
 
             <RadioGroup
                 android:id="@+id/answer_1"
@@ -132,6 +147,7 @@
                 android:orientation="vertical"
                 android:paddingEnd="20dp"
                 android:paddingStart="20dp"
+                style="@style/answers"
 
                 >
 
@@ -141,7 +157,7 @@
                     android:layout_height="wrap_content"
                     android:onClick="answers_check"
                     android:text="@string/yes"
-                    android:textAppearance="?android:textAppearanceSmall" />
+                    />
 
                 <RadioButton
                     android:id="@+id/answer_1_no"
@@ -149,7 +165,7 @@
                     android:layout_height="wrap_content"
                     android:onClick="answers_check"
                     android:text="@string/no"
-                    android:textAppearance="?android:textAppearanceSmall" />
+                    />
 
             </RadioGroup>
 
@@ -161,7 +177,8 @@
                 android:paddingStart="20dp"
                 android:paddingTop="10dp"
                 android:text="@string/question_2"
-                android:textColor="#000" />
+                style="@style/questions"
+                />
 
             <RadioGroup
                 android:id="@+id/answer_2"
@@ -169,6 +186,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:paddingEnd="20dp"
+                style="@style/answers"
                 android:paddingStart="20dp">
 
                 <RadioButton
@@ -177,7 +195,7 @@
                     android:layout_height="wrap_content"
                     android:onClick="answers_check"
                     android:text="@string/yes"
-                    android:textAppearance="?android:textAppearanceSmall" />
+                    />
 
                 <RadioButton
                     android:id="@+id/answer_2_no"
@@ -185,7 +203,16 @@
                     android:layout_height="wrap_content"
                     android:onClick="answers_check"
                     android:text="@string/no"
-                    android:textAppearance="?android:textAppearanceSmall" />
+
+                     />
+
+                <RadioButton
+                    android:id="@+id/answer_2_mind"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="answers_check"
+                    android:text="@string/i_don_t_mind"
+                     />
             </RadioGroup>
 
             <TextView
@@ -196,15 +223,16 @@
                 android:paddingStart="20dp"
                 android:paddingTop="10dp"
                 android:text="@string/question_3"
-                android:textColor="#000" />
-
+                style="@style/questions"
+                />
             <RadioGroup
                 android:id="@+id/answer_3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:paddingEnd="20dp"
-                android:paddingStart="20dp">
+                android:paddingStart="20dp"
+                style="@style/answers">
 
                 <RadioButton
                     android:id="@+id/answer_3_yes"
@@ -212,15 +240,14 @@
                     android:layout_height="wrap_content"
                     android:onClick="answers_check"
                     android:text="@string/yes"
-                    android:textAppearance="?android:textAppearanceSmall" />
-
+                    />
                 <RadioButton
                     android:id="@+id/answer_3_no"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:onClick="answers_check"
                     android:text="@string/no"
-                    android:textAppearance="?android:textAppearanceSmall" />
+                    />
             </RadioGroup>
 
             <TextView
@@ -231,15 +258,16 @@
                 android:paddingStart="20dp"
                 android:paddingTop="10dp"
                 android:text="@string/question_4"
-                android:textColor="#000" />
-
+                style="@style/questions"
+                />
             <RadioGroup
                 android:id="@+id/answer_4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:paddingEnd="20dp"
-                android:paddingStart="20dp">
+                android:paddingStart="20dp"
+                style="@style/answers">
 
                 <RadioButton
                     android:id="@+id/answer_4_yes"
@@ -247,7 +275,7 @@
                     android:layout_height="wrap_content"
                     android:onClick="answers_check"
                     android:text="@string/yes"
-                    android:textAppearance="?android:textAppearanceSmall" />
+                    />
 
                 <RadioButton
                     android:id="@+id/answer_4_no"
@@ -255,7 +283,7 @@
                     android:layout_height="wrap_content"
                     android:onClick="answers_check"
                     android:text="@string/no"
-                    android:textAppearance="?android:textAppearanceSmall" />
+                    />
             </RadioGroup>
 
             <TextView
@@ -266,15 +294,16 @@
                 android:paddingStart="20dp"
                 android:paddingTop="10dp"
                 android:text="@string/question_5"
-                android:textColor="#000" />
-
+                style="@style/questions"
+                />
             <RadioGroup
                 android:id="@+id/answer_5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:paddingEnd="20dp"
-                android:paddingStart="20dp">
+                android:paddingStart="20dp"
+                style="@style/answers">
 
                 <RadioButton
                     android:id="@+id/answer_5_yes"
@@ -282,7 +311,7 @@
                     android:layout_height="wrap_content"
                     android:onClick="answers_check"
                     android:text="@string/yes"
-                    android:textAppearance="?android:textAppearanceSmall" />
+                    />
 
                 <RadioButton
                     android:id="@+id/answer_5_no"
@@ -290,7 +319,9 @@
                     android:layout_height="wrap_content"
                     android:onClick="answers_check"
                     android:text="@string/no"
-                    android:textAppearance="?android:textAppearanceSmall" />
+                    />
+
+
             </RadioGroup>
 
             <TextView
@@ -301,15 +332,16 @@
                 android:paddingStart="20dp"
                 android:paddingTop="10dp"
                 android:text="@string/question_6"
-                android:textColor="#000" />
-
+                style="@style/questions"
+                />
             <RadioGroup
                 android:id="@+id/answer_6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:paddingEnd="20dp"
-                android:paddingStart="20dp">
+                android:paddingStart="20dp"
+                style="@style/answers">
 
                 <RadioButton
                     android:id="@+id/answer_6_yes"
@@ -317,7 +349,7 @@
                     android:layout_height="wrap_content"
                     android:onClick="answers_check"
                     android:text="@string/yes"
-                    android:textAppearance="?android:textAppearanceSmall" />
+                    />
 
                 <RadioButton
                     android:id="@+id/answer_6_no"
@@ -325,7 +357,7 @@
                     android:layout_height="wrap_content"
                     android:onClick="answers_check"
                     android:text="@string/no"
-                    android:textAppearance="?android:textAppearanceSmall" />
+                    />
             </RadioGroup>
 
             <TextView
@@ -336,15 +368,16 @@
                 android:paddingStart="20dp"
                 android:paddingTop="10dp"
                 android:text="@string/question_7"
-                android:textColor="#000" />
-
+                style="@style/questions"
+                />
             <RadioGroup
                 android:id="@+id/answer_7"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:paddingEnd="20dp"
-                android:paddingStart="20dp">
+                android:paddingStart="20dp"
+                style="@style/answers">
 
                 <RadioButton
                     android:id="@+id/answer_7_yes"
@@ -352,7 +385,7 @@
                     android:layout_height="wrap_content"
                     android:onClick="answers_check"
                     android:text="@string/yes"
-                    android:textAppearance="?android:textAppearanceSmall" />
+                    />
 
                 <RadioButton
                     android:id="@+id/answer_7_no"
@@ -360,7 +393,7 @@
                     android:layout_height="wrap_content"
                     android:onClick="answers_check"
                     android:text="@string/no"
-                    android:textAppearance="?android:textAppearanceSmall" />
+                    />
             </RadioGroup>
 
             <TextView
@@ -371,15 +404,16 @@
                 android:paddingStart="20dp"
                 android:paddingTop="10dp"
                 android:text="@string/question_8"
-                android:textColor="#000" />
-
+                style="@style/questions"
+                />
             <RadioGroup
                 android:id="@+id/answer_8"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:paddingEnd="20dp"
-                android:paddingStart="20dp">
+                android:paddingStart="20dp"
+                style="@style/answers">
 
                 <RadioButton
                     android:id="@+id/answer_8_yes"
@@ -387,7 +421,7 @@
                     android:layout_height="wrap_content"
                     android:onClick="answers_check"
                     android:text="@string/yes"
-                    android:textAppearance="?android:textAppearanceSmall" />
+                   />
 
                 <RadioButton
                     android:id="@+id/answer_8_no"
@@ -395,7 +429,7 @@
                     android:layout_height="wrap_content"
                     android:onClick="answers_check"
                     android:text="@string/no"
-                    android:textAppearance="?android:textAppearanceSmall" />
+                    />
             </RadioGroup>
 
             <Button
@@ -405,8 +439,9 @@
                 android:onClick="finish"
                 android:text="@string/finish_button"
                 android:textAppearance="?android:textAppearanceLarge"
-                android:textColor="#4689C8"
-                android:textStyle="bold" />
+                android:textColor="@color/darkBrown"
+                android:textStyle="bold"
+                android:backgroundTint="@color/colorAccent"/>
 
             <Button
                 android:layout_width="wrap_content"
@@ -415,8 +450,9 @@
                 android:onClick="resetGrade"
                 android:text="@string/reset_button"
                 android:textAppearance="?android:textAppearanceLarge"
-                android:textColor="#154876"
-                android:textStyle="bold" />
+                android:textColor="@color/darkBrown"
+                android:textStyle="bold"
+                android:backgroundTint="@color/roseWater"/>
 
             <TextView
                 android:id="@+id/more_info"

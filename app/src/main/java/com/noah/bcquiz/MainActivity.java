@@ -79,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
         RadioButton answer_1_no = (RadioButton) findViewById(R.id.answer_1_no);
         RadioButton answer_2_yes = (RadioButton) findViewById(R.id.answer_2_yes);
         RadioButton answer_2_no = (RadioButton) findViewById(R.id.answer_2_no);
+        RadioButton answer_2_mind = (RadioButton) findViewById(R.id.answer_2_mind);
         RadioButton answer_3_yes = (RadioButton) findViewById(R.id.answer_3_yes);
         RadioButton answer_3_no = (RadioButton) findViewById(R.id.answer_3_no);
         RadioButton answer_4_yes = (RadioButton) findViewById(R.id.answer_4_yes);
@@ -91,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
         RadioButton answer_7_no = (RadioButton) findViewById(R.id.answer_7_no);
         RadioButton answer_8_yes = (RadioButton) findViewById(R.id.answer_8_yes);
         RadioButton answer_8_no = (RadioButton) findViewById(R.id.answer_8_no);
+
 
         condomGrade = 0;
         pillsGrade = 0;
@@ -113,13 +115,20 @@ public class MainActivity extends AppCompatActivity {
         }
 
         if (answer_2_yes.isChecked()) {
-            condomGrade++;
+            condomGrade += 10;
             displayCondomGrade(condomGrade);
-            pillsGrade++;
+            pillsGrade += 0;
+            displayPillsGrade(pillsGrade);
+            iudGrade += 10;
+            displayIudGrade(iudGrade);
+        } else if (answer_2_no.isChecked()) {
+            condomGrade += 0;
+            displayCondomGrade(condomGrade);
+            pillsGrade += 10;
             displayPillsGrade(pillsGrade);
             iudGrade += 0;
             displayIudGrade(iudGrade);
-        } else if (answer_2_no.isChecked()) {
+        } else if (answer_2_mind.isChecked()) {
             condomGrade++;
             displayCondomGrade(condomGrade);
             pillsGrade++;
@@ -129,11 +138,11 @@ public class MainActivity extends AppCompatActivity {
         }
 
         if (answer_3_yes.isChecked()) {
-            condomGrade++;
+            condomGrade += 2;
             displayCondomGrade(condomGrade);
             pillsGrade += 0;
             displayPillsGrade(pillsGrade);
-            iudGrade += 0;
+            iudGrade += 2;
             displayIudGrade(iudGrade);
         } else if (answer_3_no.isChecked()) {
             condomGrade++;
@@ -142,12 +151,13 @@ public class MainActivity extends AppCompatActivity {
             displayPillsGrade(pillsGrade);
             iudGrade++;
             displayIudGrade(iudGrade);
+
         }
 
         if (answer_4_yes.isChecked()) {
             condomGrade++;
             displayCondomGrade(condomGrade);
-            pillsGrade += 0;
+            pillsGrade++;
             displayPillsGrade(pillsGrade);
             iudGrade += 0;
             displayIudGrade(iudGrade);
@@ -158,12 +168,13 @@ public class MainActivity extends AppCompatActivity {
             displayPillsGrade(pillsGrade);
             iudGrade++;
             displayIudGrade(iudGrade);
+
         }
 
         if (answer_5_yes.isChecked()) {
             condomGrade++;
             displayCondomGrade(condomGrade);
-            pillsGrade += 0;
+            pillsGrade++;
             displayPillsGrade(pillsGrade);
             iudGrade += 0;
             displayIudGrade(iudGrade);
@@ -181,7 +192,7 @@ public class MainActivity extends AppCompatActivity {
             displayCondomGrade(condomGrade);
             pillsGrade += 0;
             displayPillsGrade(pillsGrade);
-            iudGrade += 0;
+            iudGrade++;
             displayIudGrade(iudGrade);
         } else if (answer_6_no.isChecked()) {
             condomGrade++;
@@ -195,32 +206,32 @@ public class MainActivity extends AppCompatActivity {
         if (answer_7_yes.isChecked()) {
             condomGrade++;
             displayCondomGrade(condomGrade);
-            pillsGrade += 0;
+            pillsGrade++;
             displayPillsGrade(pillsGrade);
-            iudGrade += 0;
+            iudGrade++;
             displayIudGrade(iudGrade);
         } else if (answer_7_no.isChecked()) {
             condomGrade++;
             displayCondomGrade(condomGrade);
-            pillsGrade++;
+            pillsGrade += 0;
             displayPillsGrade(pillsGrade);
             iudGrade++;
             displayIudGrade(iudGrade);
         }
 
         if (answer_8_yes.isChecked()) {
-            condomGrade++;
+            condomGrade += 2;
             displayCondomGrade(condomGrade);
             pillsGrade += 0;
             displayPillsGrade(pillsGrade);
-            iudGrade += 0;
+            iudGrade += 2;
             displayIudGrade(iudGrade);
         } else if (answer_8_no.isChecked()) {
             condomGrade++;
             displayCondomGrade(condomGrade);
             pillsGrade++;
             displayPillsGrade(pillsGrade);
-            iudGrade+=10;
+            iudGrade++;
             displayIudGrade(iudGrade);
         }
     }
@@ -229,7 +240,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * This method checks if all the questions are answered.
      */
-    public boolean areAllQuestionsAnswered() {
+    public boolean findIfAllQuestionsAnswered() {
 
         RadioGroup answer_1 = (RadioGroup) findViewById(R.id.answer_1);
         RadioGroup answer_2 = (RadioGroup) findViewById(R.id.answer_2);
@@ -281,7 +292,7 @@ public class MainActivity extends AppCompatActivity {
      */
 
     public void finish(View view) {
-        if (areAllQuestionsAnswered()) {
+        if (findIfAllQuestionsAnswered()) {
             AlertDialog alertDialog = new AlertDialog.Builder(this)
                     .setTitle("Final Answer:")
                     .setMessage("Seems like " + findBestMethod() + " might be a good contraception method for you! " +
@@ -336,6 +347,25 @@ public class MainActivity extends AppCompatActivity {
         scrollView.smoothScrollTo(0, 0);
 
 
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        outState.putInt("condomGrade", condomGrade);
+        outState.putInt("pillsGrade", pillsGrade);
+        outState.putInt("iudGrade", iudGrade);
+        super.onSaveInstanceState(outState);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        condomGrade = savedInstanceState.getInt("condomGrade", condomGrade);
+        pillsGrade = savedInstanceState.getInt("pillsGrade", pillsGrade);
+        iudGrade = savedInstanceState.getInt("iudGrade", iudGrade);
+        displayCondomGrade(condomGrade);
+        displayPillsGrade(pillsGrade);
+        displayIudGrade(iudGrade);
     }
 
 }
