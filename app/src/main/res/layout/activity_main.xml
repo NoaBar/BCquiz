@@ -6,12 +6,14 @@
     android:layout_height="wrap_content"
     android:background="@color/cream"
     android:orientation="vertical"
-    tools:context="com.noah.bcquiz.MainActivity">
+    tools:context="com.noah.bcquiz.MainActivity"
+    android:padding="5dp">
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        >
 
 
         <LinearLayout
@@ -52,7 +54,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="vertical"
-            android:padding="10dp">
+            android:padding="10dp"
+            >
 
             <ImageView
                 style="@style/images"
@@ -416,7 +419,8 @@
                 android:text="@string/finish_button"
                 android:textAppearance="?android:textAppearanceLarge"
                 android:textColor="@color/black"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"/>
 
             <Button
                 android:layout_width="wrap_content"
