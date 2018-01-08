@@ -11,8 +11,8 @@
     <string name="pills_grade">0</string>
     <string name="condom_grade">0</string>
 
-    <string name="question_1">Are you looking for a birth control that protects against STDs/STIs?</string>
-    <string name="question_2">Are you looking for a non-hormonal birth control?</string>
+    <string name="question_1">Are you looking for a contraception method that protects against STDs/STIs?</string>
+    <string name="question_2">Are you looking for a non-hormonal or hormonal contraception method?</string>
     <string name="question_3">Do you or your family have a history of blood clots?</string>
     <string name="question_4">Do you experience pain or heavy flow while menstruating?</string>
     <string name="question_5">Do you plan to conceive in the very near future?</string>
@@ -30,6 +30,8 @@
     <string name="your_life"><a href="https://www.your-life.com/en/contraception-methods/#methods-">Your life</a></string>
     <string name="reset_button">Reset</string>
     <string name="i_don_t_mind">I don\'t mind</string>
+    <string name="hormonal">Hormonal</string>
+    <string name="non_hormonal">Non-hormonal</string>
 
 
 </resources>
