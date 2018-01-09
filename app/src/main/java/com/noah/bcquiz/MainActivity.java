@@ -1,11 +1,13 @@
 package com.noah.bcquiz;
 
 import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Html;
 import android.text.method.LinkMovementMethod;
 import android.text.util.Linkify;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.CheckBox;
@@ -24,11 +26,21 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        new AlertDialog.Builder(this)
-                .setTitle(R.string.disclaimer_title)
-                .setMessage(R.string.disclaimer_message)
-                .setNeutralButton(R.string.disclaimer_button, null)
-                .show();
+        if(savedInstanceState == null ||
+                !savedInstanceState.getBoolean("alertSeen", false)) {
+            new AlertDialog.Builder(this)
+                    .setTitle(R.string.disclaimer_title)
+                    .setMessage(R.string.disclaimer_message)
+                    .setNeutralButton(R.string.disclaimer_button, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            alertSeen = true;
+                        }
+                    })
+                    .setCancelable(false)
+                    .show();
+        } else {
+            alertSeen = true;
+        }
 
         TextView who = (TextView) findViewById(R.id.link_who);
         who.setMovementMethod(LinkMovementMethod.getInstance());
@@ -37,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
         yourLife.setMovementMethod(LinkMovementMethod.getInstance());
     }
 
+    boolean alertSeen = false;
 
     int condomGrade = 0;
     int pillsGrade = 0;
@@ -354,6 +367,7 @@ public class MainActivity extends AppCompatActivity {
         outState.putInt("condomGrade", condomGrade);
         outState.putInt("pillsGrade", pillsGrade);
         outState.putInt("iudGrade", iudGrade);
+        outState.putBoolean("alertSeen", alertSeen);
         super.onSaveInstanceState(outState);
     }
 
@@ -363,6 +377,7 @@ public class MainActivity extends AppCompatActivity {
         condomGrade = savedInstanceState.getInt("condomGrade", condomGrade);
         pillsGrade = savedInstanceState.getInt("pillsGrade", pillsGrade);
         iudGrade = savedInstanceState.getInt("iudGrade", iudGrade);
+        alertSeen = savedInstanceState.getBoolean("alertSeen", alertSeen);
         displayCondomGrade(condomGrade);
         displayPillsGrade(pillsGrade);
         displayIudGrade(iudGrade);
