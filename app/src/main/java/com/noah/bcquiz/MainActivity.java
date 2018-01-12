@@ -281,6 +281,7 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * This method finds which BC method seems to be the best for the user.
+     * @param ????????
      */
     public String findBestMethod() {
         int[] gradesArray = {condomGrade, pillsGrade, iudGrade};
@@ -291,9 +292,13 @@ public class MainActivity extends AppCompatActivity {
         String bestMethod = methodNames[0];
 
         for (int i = 1; i < size; i++) {
-            if (gradesArray[i] >= bestGrade) {
+            if (gradesArray[i] > bestGrade) {
                 bestGrade = gradesArray[i];
                 bestMethod = methodNames[i];
+
+            }else if (gradesArray[i] == bestGrade) {
+                bestGrade = gradesArray[i];
+                bestMethod = bestMethod + " and "+ methodNames[i];
             }
         }
         return bestMethod;
@@ -308,7 +313,7 @@ public class MainActivity extends AppCompatActivity {
         if (findIfAllQuestionsAnswered()) {
             AlertDialog alertDialog = new AlertDialog.Builder(this)
                     .setTitle("Final Answer:")
-                    .setMessage("Seems like " + findBestMethod() + " might be a good contraception method for you! " +
+                    .setMessage("Seems like " + findBestMethod() + " might be good for you! " +
                             "\n\nFor more information, please click the links below!")
                     .setNeutralButton("OK", null)
                     .show();
