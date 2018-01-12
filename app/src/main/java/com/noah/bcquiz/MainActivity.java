@@ -312,10 +312,11 @@ public class MainActivity extends AppCompatActivity {
     public void finish(View view) {
         if (findIfAllQuestionsAnswered()) {
             AlertDialog alertDialog = new AlertDialog.Builder(this)
-                    .setTitle("Final Answer:")
-                    .setMessage("Seems like " + findBestMethod() + " might be good for you! " +
-                            "\n\nFor more information, please click the links below!")
+                    .setTitle(R.string.final_answer_title)
+                    .setMessage(getString(R.string.final_answer_text_1) + findBestMethod() + getString(R.string.final_answer_text_2) +
+                            getString(R.string.final_answer_text_3))
                     .setNeutralButton("OK", null)
+                    .setCancelable(false)
                     .show();
         } else {
             Toast toast = Toast.makeText(this, R.string.incomplete_toast, Toast.LENGTH_LONG);
@@ -350,7 +351,6 @@ public class MainActivity extends AppCompatActivity {
         RadioGroup answer_6 = (RadioGroup) findViewById(R.id.answer_6);
         RadioGroup answer_7 = (RadioGroup) findViewById(R.id.answer_7);
         RadioGroup answer_8 = (RadioGroup) findViewById(R.id.answer_8);
-
 
         answer_1.clearCheck();
         answer_2.clearCheck();

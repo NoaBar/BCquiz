@@ -32,6 +32,10 @@
     <string name="i_don_t_mind">I don\'t mind</string>
     <string name="hormonal">Hormonal</string>
     <string name="non_hormonal">Non-hormonal</string>
+    <string name="final_answer_title">Final Answer:</string>
+    <string name="final_answer_text_1">Seems like</string>
+    <string name="final_answer_text_2">might be good for you!</string>
+    <string name="final_answer_text_3">For more information, please click the links below!</string>
 
 
 </resources>
