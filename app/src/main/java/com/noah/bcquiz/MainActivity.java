@@ -26,8 +26,24 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        if(savedInstanceState == null ||
-                !savedInstanceState.getBoolean("alertSeen", false)) {
+
+        if(savedInstanceState == null) {
+            displayAlerts();
+        }
+
+        TextView who = (TextView) findViewById(R.id.link_who);
+        who.setMovementMethod(LinkMovementMethod.getInstance());
+
+        TextView yourLife = (TextView) findViewById(R.id.link_your_life);
+        yourLife.setMovementMethod(LinkMovementMethod.getInstance());
+    }
+
+    /**
+     * This method displays the disclaimer message at the beginning
+     * and the final answer after clicking the finish button.
+     */
+    public void displayAlerts() {
+        if (!alertSeen){
             new AlertDialog.Builder(this)
                     .setTitle(R.string.disclaimer_title)
                     .setMessage(R.string.disclaimer_message)
@@ -38,18 +54,24 @@ public class MainActivity extends AppCompatActivity {
                     })
                     .setCancelable(false)
                     .show();
-        } else {
-            alertSeen = true;
         }
-
-        TextView who = (TextView) findViewById(R.id.link_who);
-        who.setMovementMethod(LinkMovementMethod.getInstance());
-
-        TextView yourLife = (TextView) findViewById(R.id.link_your_life);
-        yourLife.setMovementMethod(LinkMovementMethod.getInstance());
+        if (showFinalAnswer) {
+            new AlertDialog.Builder(this)
+                    .setTitle(R.string.final_answer_title)
+                    .setMessage(getString(R.string.final_answer_text_1) + " " + findBestMethod() + " "
+                            + getString(R.string.final_answer_text_2) + getString(R.string.final_answer_text_3))
+                    .setNeutralButton(R.string.ok_button_final_answer, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            showFinalAnswer = false;
+                        }
+                    })
+                    .setCancelable(false)
+                    .show();
+        }
     }
 
     boolean alertSeen = false;
+    boolean showFinalAnswer = false;
 
     int condomGrade = 0;
     int pillsGrade = 0;
@@ -281,7 +303,8 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * This method finds which BC method seems to be the best for the user.
-     * @param ????????
+     * @return the name of the best method. if there are more than 1 best method they
+     *         would be connected by "and".
      */
     public String findBestMethod() {
         int[] gradesArray = {condomGrade, pillsGrade, iudGrade};
@@ -311,13 +334,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void finish(View view) {
         if (findIfAllQuestionsAnswered()) {
-            AlertDialog alertDialog = new AlertDialog.Builder(this)
-                    .setTitle(R.string.final_answer_title)
-                    .setMessage(getString(R.string.final_answer_text_1) + " " + findBestMethod() + " "
-                            + getString(R.string.final_answer_text_2) + getString(R.string.final_answer_text_3))
-                    .setNeutralButton(R.string.ok_button_final_answer, null)
-                    .setCancelable(false)
-                    .show();
+            showFinalAnswer = true;
+            displayAlerts();
+
         } else {
             Toast toast = Toast.makeText(this, R.string.incomplete_toast, Toast.LENGTH_LONG);
             LinearLayout layout = (LinearLayout) toast.getView();
@@ -373,6 +392,7 @@ public class MainActivity extends AppCompatActivity {
         outState.putInt("pillsGrade", pillsGrade);
         outState.putInt("iudGrade", iudGrade);
         outState.putBoolean("alertSeen", alertSeen);
+        outState.putBoolean("showFinalAnswer", showFinalAnswer);
         super.onSaveInstanceState(outState);
     }
 
@@ -383,6 +403,9 @@ public class MainActivity extends AppCompatActivity {
         pillsGrade = savedInstanceState.getInt("pillsGrade", pillsGrade);
         iudGrade = savedInstanceState.getInt("iudGrade", iudGrade);
         alertSeen = savedInstanceState.getBoolean("alertSeen", alertSeen);
+        showFinalAnswer = savedInstanceState.getBoolean("showFinalAnswer", showFinalAnswer);
+        displayAlerts();
+
         displayCondomGrade(condomGrade);
         displayPillsGrade(pillsGrade);
         displayIudGrade(iudGrade);
