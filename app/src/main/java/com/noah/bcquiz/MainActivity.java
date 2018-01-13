@@ -313,9 +313,9 @@ public class MainActivity extends AppCompatActivity {
         if (findIfAllQuestionsAnswered()) {
             AlertDialog alertDialog = new AlertDialog.Builder(this)
                     .setTitle(R.string.final_answer_title)
-                    .setMessage(getString(R.string.final_answer_text_1) + findBestMethod() + getString(R.string.final_answer_text_2) +
-                            getString(R.string.final_answer_text_3))
-                    .setNeutralButton("OK", null)
+                    .setMessage(getString(R.string.final_answer_text_1) + " " + findBestMethod() + " "
+                            + getString(R.string.final_answer_text_2) + getString(R.string.final_answer_text_3))
+                    .setNeutralButton(R.string.ok_button_final_answer, null)
                     .setCancelable(false)
                     .show();
         } else {
