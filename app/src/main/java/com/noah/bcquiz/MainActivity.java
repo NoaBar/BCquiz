@@ -112,6 +112,10 @@ public class MainActivity extends AppCompatActivity {
 
         RadioButton answer_1_yes = (RadioButton) findViewById(R.id.answer_1_yes);
         RadioButton answer_1_no = (RadioButton) findViewById(R.id.answer_1_no);
+
+        CheckBox answer_2_non_hormonal = (CheckBox)findViewById(R.id.answer_2_non_hormonal);
+        CheckBox answer_2_hormonal = (CheckBox)findViewById(R.id.answer_2_hormonal);
+
         RadioButton answer_2_yes = (RadioButton) findViewById(R.id.answer_2_yes);
         RadioButton answer_2_no = (RadioButton) findViewById(R.id.answer_2_no);
         RadioButton answer_2_mind = (RadioButton) findViewById(R.id.answer_2_mind);
@@ -149,14 +153,14 @@ public class MainActivity extends AppCompatActivity {
             displayIudGrade(iudGrade);
         }
 
-        if (answer_2_yes.isChecked()) {
+        if (answer_2_non_hormonal.isChecked()) {
             condomGrade += 10;
             displayCondomGrade(condomGrade);
             pillsGrade += 0;
             displayPillsGrade(pillsGrade);
             iudGrade += 10;
             displayIudGrade(iudGrade);
-        } else if (answer_2_no.isChecked()) {
+        } else if (answer_2_hormonal.isChecked()) {
             condomGrade += 0;
             displayCondomGrade(condomGrade);
             pillsGrade += 10;

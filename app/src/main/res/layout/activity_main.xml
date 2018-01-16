@@ -137,6 +137,23 @@
                 android:paddingTop="10dp"
                 android:text="@string/question_2" />
 
+            <CheckBox
+                android:id="@+id/answer_2_non_hormonal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/non_hormonal"
+                style="@style/checkbox"
+                />
+
+            <CheckBox
+                android:id="@+id/answer_2_hormonal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/hormonal"
+                style="@style/checkbox"
+                />
+
+
             <RadioGroup
                 android:id="@+id/answer_2"
                 style="@style/answers"
