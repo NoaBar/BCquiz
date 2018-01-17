@@ -282,6 +282,13 @@ public class MainActivity extends AppCompatActivity {
     public boolean findIfAllQuestionsAnswered() {
 
         RadioGroup answer_1 = (RadioGroup) findViewById(R.id.answer_1);
+
+        CheckBox answer_2_non = (CheckBox) findViewById(R.id.answer_2_non_hormonal);
+        boolean answer_2_non_hormonal = answer_2_non.isChecked();
+
+        CheckBox answer_2_horm = (CheckBox) findViewById(R.id.answer_2_hormonal);
+        boolean answer_2_hormonal = answer_2_horm.isChecked();
+
         RadioGroup answer_2 = (RadioGroup) findViewById(R.id.answer_2);
         RadioGroup answer_3 = (RadioGroup) findViewById(R.id.answer_3);
         RadioGroup answer_4 = (RadioGroup) findViewById(R.id.answer_4);
@@ -291,6 +298,7 @@ public class MainActivity extends AppCompatActivity {
         RadioGroup answer_8 = (RadioGroup) findViewById(R.id.answer_8);
 
         if (answer_1.getCheckedRadioButtonId() == -1 ||
+                ((!answer_2_non_hormonal)&&(!answer_2_hormonal))||
                 answer_2.getCheckedRadioButtonId() == -1 ||
                 answer_3.getCheckedRadioButtonId() == -1 ||
                 answer_4.getCheckedRadioButtonId() == -1 ||
