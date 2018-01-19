@@ -22,12 +22,18 @@ import java.security.acl.Group;
 
 public class MainActivity extends AppCompatActivity {
 
+    boolean alertSeen = false;
+    boolean showFinalAnswer = false;
+    int condomGrade = 0;
+    int pillsGrade = 0;
+    int iudGrade = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        if(savedInstanceState == null) {
+        if (savedInstanceState == null) {
             displayAlerts();
         }
 
@@ -43,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
      * and the final answer after clicking the finish button.
      */
     public void displayAlerts() {
-        if (!alertSeen){
+        if (!alertSeen) {
             new AlertDialog.Builder(this)
                     .setTitle(R.string.disclaimer_title)
                     .setMessage(R.string.disclaimer_message)
@@ -69,14 +75,6 @@ public class MainActivity extends AppCompatActivity {
                     .show();
         }
     }
-
-    boolean alertSeen = false;
-    boolean showFinalAnswer = false;
-
-    int condomGrade = 0;
-    int pillsGrade = 0;
-    int iudGrade = 0;
-
 
     /**
      * Displays the given grade for condoms.
@@ -105,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     /**
-     * This method is called when all the radioButtons are clicked (to see how the grade changes online)
+     * This method is called when all the radioButtons/checkBoxes are clicked (to see how the grade changes online)
      * and the finish button is clicked.
      */
     public void answers_check(View view) {
@@ -113,12 +111,11 @@ public class MainActivity extends AppCompatActivity {
         RadioButton answer_1_yes = (RadioButton) findViewById(R.id.answer_1_yes);
         RadioButton answer_1_no = (RadioButton) findViewById(R.id.answer_1_no);
 
-        CheckBox answer_2_non_hormonal = (CheckBox)findViewById(R.id.answer_2_non_hormonal);
-        CheckBox answer_2_hormonal = (CheckBox)findViewById(R.id.answer_2_hormonal);
+        CheckBox answer_2_non = (CheckBox) findViewById(R.id.answer_2_non_hormonal);
+        boolean answer_2_non_hormonal = answer_2_non.isChecked();
+        CheckBox answer_2_horm = (CheckBox) findViewById(R.id.answer_2_hormonal);
+        boolean answer_2_hormonal = answer_2_horm.isChecked();
 
-        RadioButton answer_2_yes = (RadioButton) findViewById(R.id.answer_2_yes);
-        RadioButton answer_2_no = (RadioButton) findViewById(R.id.answer_2_no);
-        RadioButton answer_2_mind = (RadioButton) findViewById(R.id.answer_2_mind);
         RadioButton answer_3_yes = (RadioButton) findViewById(R.id.answer_3_yes);
         RadioButton answer_3_no = (RadioButton) findViewById(R.id.answer_3_no);
         RadioButton answer_4_yes = (RadioButton) findViewById(R.id.answer_4_yes);
@@ -153,26 +150,21 @@ public class MainActivity extends AppCompatActivity {
             displayIudGrade(iudGrade);
         }
 
-        if (answer_2_non_hormonal.isChecked()) {
+        if (answer_2_non_hormonal) {
             condomGrade += 10;
             displayCondomGrade(condomGrade);
             pillsGrade += 0;
             displayPillsGrade(pillsGrade);
             iudGrade += 10;
             displayIudGrade(iudGrade);
-        } else if (answer_2_hormonal.isChecked()) {
+        }
+
+        if (answer_2_hormonal) {
             condomGrade += 0;
             displayCondomGrade(condomGrade);
             pillsGrade += 10;
             displayPillsGrade(pillsGrade);
             iudGrade += 0;
-            displayIudGrade(iudGrade);
-        } else if (answer_2_mind.isChecked()) {
-            condomGrade++;
-            displayCondomGrade(condomGrade);
-            pillsGrade++;
-            displayPillsGrade(pillsGrade);
-            iudGrade++;
             displayIudGrade(iudGrade);
         }
 
@@ -282,14 +274,10 @@ public class MainActivity extends AppCompatActivity {
     public boolean findIfAllQuestionsAnswered() {
 
         RadioGroup answer_1 = (RadioGroup) findViewById(R.id.answer_1);
-
         CheckBox answer_2_non = (CheckBox) findViewById(R.id.answer_2_non_hormonal);
         boolean answer_2_non_hormonal = answer_2_non.isChecked();
-
         CheckBox answer_2_horm = (CheckBox) findViewById(R.id.answer_2_hormonal);
         boolean answer_2_hormonal = answer_2_horm.isChecked();
-
-        RadioGroup answer_2 = (RadioGroup) findViewById(R.id.answer_2);
         RadioGroup answer_3 = (RadioGroup) findViewById(R.id.answer_3);
         RadioGroup answer_4 = (RadioGroup) findViewById(R.id.answer_4);
         RadioGroup answer_5 = (RadioGroup) findViewById(R.id.answer_5);
@@ -298,8 +286,7 @@ public class MainActivity extends AppCompatActivity {
         RadioGroup answer_8 = (RadioGroup) findViewById(R.id.answer_8);
 
         if (answer_1.getCheckedRadioButtonId() == -1 ||
-                ((!answer_2_non_hormonal)&&(!answer_2_hormonal))||
-                answer_2.getCheckedRadioButtonId() == -1 ||
+                ((!answer_2_non_hormonal) && (!answer_2_hormonal)) ||
                 answer_3.getCheckedRadioButtonId() == -1 ||
                 answer_4.getCheckedRadioButtonId() == -1 ||
                 answer_5.getCheckedRadioButtonId() == -1 ||
@@ -315,8 +302,9 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * This method finds which BC method seems to be the best for the user.
+     *
      * @return the name of the best method. if there are more than 1 best method they
-     *         would be connected by "and".
+     * would be connected by "and".
      */
     public String findBestMethod() {
         int[] gradesArray = {condomGrade, pillsGrade, iudGrade};
@@ -331,9 +319,9 @@ public class MainActivity extends AppCompatActivity {
                 bestGrade = gradesArray[i];
                 bestMethod = methodNames[i];
 
-            }else if (gradesArray[i] == bestGrade) {
+            } else if (gradesArray[i] == bestGrade) {
                 bestGrade = gradesArray[i];
-                bestMethod = bestMethod + " and "+ methodNames[i];
+                bestMethod = bestMethod + " and " + methodNames[i];
             }
         }
         return bestMethod;
@@ -375,7 +363,8 @@ public class MainActivity extends AppCompatActivity {
         displayIudGrade(iudGrade);
 
         RadioGroup answer_1 = (RadioGroup) findViewById(R.id.answer_1);
-        RadioGroup answer_2 = (RadioGroup) findViewById(R.id.answer_2);
+        CheckBox answer_2_non = (CheckBox) findViewById(R.id.answer_2_non_hormonal);
+        CheckBox answer_2_horm = (CheckBox) findViewById(R.id.answer_2_hormonal);
         RadioGroup answer_3 = (RadioGroup) findViewById(R.id.answer_3);
         RadioGroup answer_4 = (RadioGroup) findViewById(R.id.answer_4);
         RadioGroup answer_5 = (RadioGroup) findViewById(R.id.answer_5);
@@ -384,7 +373,8 @@ public class MainActivity extends AppCompatActivity {
         RadioGroup answer_8 = (RadioGroup) findViewById(R.id.answer_8);
 
         answer_1.clearCheck();
-        answer_2.clearCheck();
+        answer_2_non.setChecked(false);
+        answer_2_horm.setChecked(false);
         answer_3.clearCheck();
         answer_4.clearCheck();
         answer_5.clearCheck();
