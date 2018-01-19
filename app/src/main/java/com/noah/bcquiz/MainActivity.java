@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -49,6 +50,13 @@ public class MainActivity extends AppCompatActivity {
      * and the final answer after clicking the finish button.
      */
     public void displayAlerts() {
+        EditText nameInput = (EditText)findViewById(R.id.name);
+        String name = nameInput.getText().toString();
+
+        if (name.matches("")){
+            name="there";
+        }
+
         if (!alertSeen) {
             new AlertDialog.Builder(this)
                     .setTitle(R.string.disclaimer_title)
@@ -64,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
         if (showFinalAnswer) {
             new AlertDialog.Builder(this)
                     .setTitle(R.string.final_answer_title)
-                    .setMessage(getString(R.string.final_answer_text_1) + " " + findBestMethod() + " "
+                    .setMessage("Hi " + name +",\n" + getString(R.string.final_answer_text_1) + " " + findBestMethod() + " "
                             + getString(R.string.final_answer_text_2) + getString(R.string.final_answer_text_3))
                     .setNeutralButton(R.string.ok_button_final_answer, new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
@@ -273,6 +281,9 @@ public class MainActivity extends AppCompatActivity {
      */
     public boolean findIfAllQuestionsAnswered() {
 
+
+        EditText nameInput = (EditText)findViewById(R.id.name);
+
         RadioGroup answer_1 = (RadioGroup) findViewById(R.id.answer_1);
         CheckBox answer_2_non = (CheckBox) findViewById(R.id.answer_2_non_hormonal);
         boolean answer_2_non_hormonal = answer_2_non.isChecked();
@@ -362,6 +373,7 @@ public class MainActivity extends AppCompatActivity {
         iudGrade = 0;
         displayIudGrade(iudGrade);
 
+        EditText nameInput = (EditText)findViewById(R.id.name);
         RadioGroup answer_1 = (RadioGroup) findViewById(R.id.answer_1);
         CheckBox answer_2_non = (CheckBox) findViewById(R.id.answer_2_non_hormonal);
         CheckBox answer_2_horm = (CheckBox) findViewById(R.id.answer_2_hormonal);
@@ -372,6 +384,7 @@ public class MainActivity extends AppCompatActivity {
         RadioGroup answer_7 = (RadioGroup) findViewById(R.id.answer_7);
         RadioGroup answer_8 = (RadioGroup) findViewById(R.id.answer_8);
 
+        nameInput.getText().clear();
         answer_1.clearCheck();
         answer_2_non.setChecked(false);
         answer_2_horm.setChecked(false);

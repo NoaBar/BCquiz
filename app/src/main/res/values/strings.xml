@@ -37,6 +37,7 @@
     <string name="final_answer_text_2">might be good for you!</string>
     <string name="final_answer_text_3">\n\nFor more information, please click the links below!</string>
     <string name="ok_button_final_answer">OK</string>
+    <string name="enter_name">Enter Name</string>
 
 
 </resources>
