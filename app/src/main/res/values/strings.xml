@@ -12,7 +12,7 @@
     <string name="condom_grade">0</string>
 
     <string name="question_1">Are you looking for a contraception method that protects against STDs/STIs?</string>
-    <string name="question_2">What kind of contraception method do you prefer?</string>
+    <string name="question_2">What kind of contraception method do you prefer? (choose all that apply)</string>
     <string name="question_3">Do you or your family have a history of blood clots?</string>
     <string name="question_4">Do you experience pain or heavy flow while menstruating?</string>
     <string name="question_5">Do you plan to conceive in the very near future?</string>
@@ -37,7 +37,7 @@
     <string name="final_answer_text_2">might be good for you!</string>
     <string name="final_answer_text_3">\n\nFor more information, please click the links below!</string>
     <string name="ok_button_final_answer">OK</string>
-    <string name="enter_name">Enter Name</string>
+    <string name="enter_name">Enter Name (optional)</string>
 
 
 </resources>

@@ -118,12 +118,8 @@ public class MainActivity extends AppCompatActivity {
 
         RadioButton answer_1_yes = (RadioButton) findViewById(R.id.answer_1_yes);
         RadioButton answer_1_no = (RadioButton) findViewById(R.id.answer_1_no);
-
-        CheckBox answer_2_non = (CheckBox) findViewById(R.id.answer_2_non_hormonal);
-        boolean answer_2_non_hormonal = answer_2_non.isChecked();
-        CheckBox answer_2_horm = (CheckBox) findViewById(R.id.answer_2_hormonal);
-        boolean answer_2_hormonal = answer_2_horm.isChecked();
-
+        CheckBox answer_2_non_hormonal = (CheckBox) findViewById(R.id.answer_2_non_hormonal);
+        CheckBox answer_2_hormonal = (CheckBox) findViewById(R.id.answer_2_hormonal);
         RadioButton answer_3_yes = (RadioButton) findViewById(R.id.answer_3_yes);
         RadioButton answer_3_no = (RadioButton) findViewById(R.id.answer_3_no);
         RadioButton answer_4_yes = (RadioButton) findViewById(R.id.answer_4_yes);
@@ -144,149 +140,100 @@ public class MainActivity extends AppCompatActivity {
 
         if (answer_1_yes.isChecked()) {
             condomGrade += 10;
-            displayCondomGrade(condomGrade);
             pillsGrade += 0;
-            displayPillsGrade(pillsGrade);
             iudGrade += 0;
-            displayIudGrade(iudGrade);
         } else if (answer_1_no.isChecked()) {
             condomGrade++;
-            displayCondomGrade(condomGrade);
             pillsGrade++;
-            displayPillsGrade(pillsGrade);
             iudGrade++;
-            displayIudGrade(iudGrade);
         }
 
-        if (answer_2_non_hormonal) {
+        if (answer_2_non_hormonal.isChecked()) {
             condomGrade += 10;
-            displayCondomGrade(condomGrade);
             pillsGrade += 0;
-            displayPillsGrade(pillsGrade);
             iudGrade += 10;
-            displayIudGrade(iudGrade);
         } else {
             condomGrade += 0;
-            displayCondomGrade(condomGrade);
             pillsGrade += 0;
-            displayPillsGrade(pillsGrade);
             iudGrade += 0;
-            displayIudGrade(iudGrade);
         }
 
-        if (answer_2_hormonal) {
+        if (answer_2_hormonal.isChecked()) {
             condomGrade += 0;
-            displayCondomGrade(condomGrade);
             pillsGrade += 10;
-            displayPillsGrade(pillsGrade);
             iudGrade += 0;
-            displayIudGrade(iudGrade);
         } else {
             condomGrade += 0;
-            displayCondomGrade(condomGrade);
             pillsGrade += 0;
-            displayPillsGrade(pillsGrade);
             iudGrade += 0;
-            displayIudGrade(iudGrade);
         }
 
         if (answer_3_yes.isChecked()) {
             condomGrade += 2;
-            displayCondomGrade(condomGrade);
             pillsGrade += 0;
-            displayPillsGrade(pillsGrade);
             iudGrade += 2;
-            displayIudGrade(iudGrade);
         } else if (answer_3_no.isChecked()) {
             condomGrade++;
-            displayCondomGrade(condomGrade);
             pillsGrade++;
-            displayPillsGrade(pillsGrade);
             iudGrade++;
-            displayIudGrade(iudGrade);
 
         }
 
         if (answer_4_yes.isChecked()) {
             condomGrade++;
-            displayCondomGrade(condomGrade);
             pillsGrade++;
-            displayPillsGrade(pillsGrade);
             iudGrade += 0;
-            displayIudGrade(iudGrade);
         } else if (answer_4_no.isChecked()) {
             condomGrade++;
-            displayCondomGrade(condomGrade);
             pillsGrade++;
-            displayPillsGrade(pillsGrade);
             iudGrade++;
-            displayIudGrade(iudGrade);
 
         }
 
         if (answer_5_yes.isChecked()) {
             condomGrade++;
-            displayCondomGrade(condomGrade);
             pillsGrade++;
-            displayPillsGrade(pillsGrade);
             iudGrade += 0;
-            displayIudGrade(iudGrade);
         } else if (answer_5_no.isChecked()) {
             condomGrade++;
-            displayCondomGrade(condomGrade);
             pillsGrade++;
-            displayPillsGrade(pillsGrade);
             iudGrade++;
-            displayIudGrade(iudGrade);
         }
 
         if (answer_6_yes.isChecked()) {
             condomGrade++;
-            displayCondomGrade(condomGrade);
             pillsGrade += 0;
-            displayPillsGrade(pillsGrade);
             iudGrade++;
-            displayIudGrade(iudGrade);
         } else if (answer_6_no.isChecked()) {
             condomGrade++;
-            displayCondomGrade(condomGrade);
             pillsGrade++;
-            displayPillsGrade(pillsGrade);
             iudGrade++;
-            displayIudGrade(iudGrade);
         }
 
         if (answer_7_yes.isChecked()) {
             condomGrade++;
-            displayCondomGrade(condomGrade);
             pillsGrade++;
-            displayPillsGrade(pillsGrade);
             iudGrade++;
-            displayIudGrade(iudGrade);
         } else if (answer_7_no.isChecked()) {
             condomGrade++;
-            displayCondomGrade(condomGrade);
             pillsGrade += 0;
-            displayPillsGrade(pillsGrade);
             iudGrade++;
-            displayIudGrade(iudGrade);
         }
 
         if (answer_8_yes.isChecked()) {
             condomGrade += 2;
-            displayCondomGrade(condomGrade);
             pillsGrade += 0;
-            displayPillsGrade(pillsGrade);
             iudGrade += 2;
-            displayIudGrade(iudGrade);
         } else if (answer_8_no.isChecked()) {
             condomGrade++;
-            displayCondomGrade(condomGrade);
             pillsGrade++;
-            displayPillsGrade(pillsGrade);
             iudGrade++;
-            displayIudGrade(iudGrade);
         }
+        displayCondomGrade(condomGrade);
+        displayPillsGrade(pillsGrade);
+        displayIudGrade(iudGrade);
+
+
     }
 
 
@@ -386,8 +333,8 @@ public class MainActivity extends AppCompatActivity {
 
         EditText nameInput = (EditText) findViewById(R.id.name);
         RadioGroup answer_1 = (RadioGroup) findViewById(R.id.answer_1);
-        CheckBox answer_2_non = (CheckBox) findViewById(R.id.answer_2_non_hormonal);
-        CheckBox answer_2_horm = (CheckBox) findViewById(R.id.answer_2_hormonal);
+        CheckBox answer_2_non_hormonal = (CheckBox) findViewById(R.id.answer_2_non_hormonal);
+        CheckBox answer_2_hormonal = (CheckBox) findViewById(R.id.answer_2_hormonal);
         RadioGroup answer_3 = (RadioGroup) findViewById(R.id.answer_3);
         RadioGroup answer_4 = (RadioGroup) findViewById(R.id.answer_4);
         RadioGroup answer_5 = (RadioGroup) findViewById(R.id.answer_5);
@@ -397,8 +344,8 @@ public class MainActivity extends AppCompatActivity {
 
         nameInput.getText().clear();
         answer_1.clearCheck();
-        answer_2_non.setChecked(false);
-        answer_2_horm.setChecked(false);
+        answer_2_non_hormonal.setChecked(false);
+        answer_2_hormonal.setChecked(false);
         answer_3.clearCheck();
         answer_4.clearCheck();
         answer_5.clearCheck();
