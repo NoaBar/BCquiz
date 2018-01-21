@@ -10,6 +10,7 @@ import android.text.util.Linkify;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -43,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
         TextView yourLife = (TextView) findViewById(R.id.link_your_life);
         yourLife.setMovementMethod(LinkMovementMethod.getInstance());
+        this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
     }
 
     /**
